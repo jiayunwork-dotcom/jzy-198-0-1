@@ -1,0 +1,13 @@
+services:
+  blast-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - blast-data:/data
+    environment:
+      BLAST_DB_PATH: /data/blast.db
+    restart: unless-stopped
+
+volumes:
+  blast-data:
